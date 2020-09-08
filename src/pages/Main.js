@@ -236,10 +236,10 @@ function Login(props) {
                         justifyContent: 'center',
                         alignItems: 'center',
                       }}>
-                      {item.imageUrl ? (
+                      {item.imgUrl !== '' ? (
                         <Image
-                          source={{uri: item.imageUrl}}
-                          style={{width: 50, height: 50}}
+                          source={{uri: item.imgUrl}}
+                          style={{width: 50, height: 50, borderRadius: 50}}
                         />
                       ) : (
                         <Iconn name="user-circle" color="#ccc" size={40} />
@@ -346,7 +346,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '100%',
-    height: 40,
+    height: 45,
     textTransform: 'capitalize',
     letterSpacing: 1,
     paddingLeft: 10,
@@ -359,6 +359,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     overflow: 'hidden',
     color: '#fff',
+    borderRadius: 30,
   },
   iconContainer: {
     width: '15%',
@@ -367,38 +368,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  btnTxt: {
-    color: '#fff',
-    fontFamily: 'OpenSans',
-    fontSize: 14,
-  },
 
-  linearGradient: {
-    width: '85%',
-    height: 50,
-    marginTop: 25,
-    borderRadius: 3,
-    elevation: 3,
-    borderRadius: 5,
-  },
-  btn: {
-    width: '75%',
-    height: 40,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 12,
-
-    backgroundColor: '#00ACEE',
-  },
-  snackbar: {
-    backgroundColor: '#1a237e',
-    elevation: 0,
-    width: '100%',
-    margin: 0,
-    borderBottomColor: 'transparent',
-    borderRadius: 0,
-  },
   txt: {lineHeight: 22, fontSize: 12, color: '#222', fontFamily: 'OpenSans'},
   continueWith: {
     flexDirection: 'row',

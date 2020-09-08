@@ -33,10 +33,12 @@ function Login(props) {
     db.collection('users')
       .doc(props.name)
       .onSnapshot(function (doc) {
-        if (doc.data().online) {
-          setOnline(true);
-        } else {
-          setOnline(false);
+        if (doc.data().online !== undefined) {
+          if (doc.data().online) {
+            setOnline(true);
+          } else {
+            setOnline(false);
+          }
         }
 
         if (doc.data().imgUrl !== '') {

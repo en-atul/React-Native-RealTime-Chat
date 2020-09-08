@@ -24,6 +24,7 @@ import {store} from '../redux/store';
 import {logoutUser} from '../redux/actions';
 import Icon from 'react-native-vector-icons/Entypo';
 import ImagePicker from 'react-native-image-picker';
+import Iconn from 'react-native-vector-icons/FontAwesome5';
 
 import firebase from '@react-native-firebase/app';
 import '@react-native-firebase/firestore';
@@ -169,12 +170,16 @@ function Login(props) {
                 backgroundColor: '#f0f0f3',
                 borderRadius: 100,
                 overflow: 'hidden',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}>
-              {user.imgUrl !== '' && (
+              {user.imgUrl !== '' ? (
                 <Image
                   source={{uri: user.imgUrl}}
                   style={{width: 60, height: 60}}
                 />
+              ) : (
+                <Iconn name="user-circle" color="#ccc" size={45} />
               )}
             </TouchableOpacity>
           </View>

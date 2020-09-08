@@ -195,7 +195,6 @@ function Login(props) {
           <View
             style={{
               alignItems: 'center',
-
               justifyContent: 'flex-start',
             }}>
             <Text
@@ -208,15 +207,17 @@ function Login(props) {
               }}>
               {props.route.params.name}{' '}
             </Text>
-            <Text
-              style={{
-                color: color,
-                fontSize: 9,
-                fontFamily: 'OpenSans',
-                textTransform: 'capitalize',
-              }}>
-              {online && 'online'}
-            </Text>
+            {online && (
+              <Text
+                style={{
+                  color: color,
+                  fontSize: 9,
+                  fontFamily: 'OpenSans',
+                  textTransform: 'capitalize',
+                }}>
+                online
+              </Text>
+            )}
           </View>
         </View>
       </View>
